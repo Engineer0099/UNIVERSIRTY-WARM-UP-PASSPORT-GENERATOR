@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - University Warm-Up Passport Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-envelope"></i> Contact Us</h1>
+                <p>Get in touch with our support team</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="tool-container">
+                <div class="content-section">
+                    <h2>Contact Us</h2>
+                    <p>We're here to help! If you have any questions, suggestions, or need assistance with our passport photo generator, please don't hesitate to reach out to us.</p>
+                    
+                    <div class="contact-grid">
+                        <div class="contact-info">
+                            <h3>Get in Touch</h3>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h4>Email Support</h4>
+                                    <p>support@passportgenerator.com</p>
+                                    <small>We typically respond within 24 hours</small>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h4>Response Time</h4>
+                                    <p>24-48 hours</p>
+                                    <small>Monday to Friday</small>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-question-circle"></i>
+                                <div>
+                                    <h4>Common Questions</h4>
+                                    <p>Check our FAQ section</p>
+                                    <small>Quick answers to common issues</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-form">
+                            <h3>Send us a Message</h3>
+                            <form id="contactForm">
+                                <div class="form-group">
+                                    <label for="name">Name *</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="subject">Subject *</label>
+                                    <select id="subject" name="subject" required>
+                                        <option value="">Select a subject</option>
+                                        <option value="technical">Technical Issue</option>
+                                        <option value="feature">Feature Request</option>
+                                        <option value="feedback">General Feedback</option>
+                                        <option value="business">Business Inquiry</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message">Message *</label>
+                                    <textarea id="message" name="message" rows="5" required placeholder="Please describe your question or issue in detail..."></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-paper-plane"></i> Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-section">
+                        <h3>Frequently Asked Questions</h3>
+                        
+                        <div class="faq-item">
+                            <h4>Q: Are my photos stored on your servers?</h4>
+                            <p>A: No, all image processing happens locally in your browser. We never store or have access to your photos.</p>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <h4>Q: What image formats are supported?</h4>
+                            <p>A: We support all common image formats including JPG, PNG, GIF, and WebP.</p>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <h4>Q: Will the generated photos be accepted by universities?</h4>
+                            <p>A: Our tool generates photos according to standard specifications, but we recommend verifying requirements with your specific institution.</p>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <h4>Q: Is the service completely free?</h4>
+                            <p>A: Yes, our passport photo generator is completely free to use with no hidden fees or subscriptions.</p>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <h4>Q: Can I use this tool on my mobile device?</h4>
+                            <p>A: Absolutely! Our tool is fully responsive and works perfectly on smartphones and tablets.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="back-link">
+                        <a href="index.html" class="btn btn-primary">
+                            <i class="fas fa-arrow-left"></i> Back to Generator
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-text">
+                    <p>&copy; 2025 University Warm-Up Passport Generator. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const form = e.target;
+            const formData = new FormData(form);
+            
+            // Create success message
+            const successMessage = document.createElement('div');
+            successMessage.className = 'success-message';
+            successMessage.innerHTML = `
+                <div class="message-content">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Thank you for your message! We'll get back to you within 24-48 hours.</span>
+                </div>
+            `;
+            successMessage.style.cssText = `
+                background: #48bb78;
+                color: white;
+                padding: 1rem;
+                border-radius: 8px;
+                margin: 1rem 0;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            `;
+            
+            // Insert message before form
+            form.parentNode.insertBefore(successMessage, form);
+            
+            // Reset form
+            form.reset();
+            
+            // Remove message after 5 seconds
+            setTimeout(() => {
+                successMessage.remove();
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
+
